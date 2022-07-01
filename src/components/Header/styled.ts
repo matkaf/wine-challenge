@@ -5,8 +5,8 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  height: 8vh;
-  width: 100vw;
+  height: 10%;
+  width: 100%;
   padding: 0.25rem 6rem;
   box-shadow: rgba(0, 0, 0, 0.10) 0 0rem 0.5rem;
 `
