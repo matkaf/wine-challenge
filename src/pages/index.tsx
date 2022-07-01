@@ -1,21 +1,20 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
 import Header from '../components/Header'
+import WineList from '../components/WineList'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
-        <title>Wine - Home</title>
+        <title>Wine - Loja</title>
       </Head>
-
+      <Header />
       <main>
-        <Header />
-        <h1>
-          Home Page - Wine.com.br
-        </h1>
+        <WineList />
       </main>
-    </div>
+    </>
   )
 }
 
