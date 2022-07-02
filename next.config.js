@@ -5,7 +5,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['www.wine.com.br']
+    domains: ['www.wine.com.br', 'img.wine.com.br']
   }
 }
 
