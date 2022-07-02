@@ -1,9 +1,10 @@
-import { NextComponentType } from 'next';
-import { AppProps } from 'next/app';
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link';
 
-import { StyledContainer } from './styled'
+import { ImageWrapper, Price, PriceContainer,
+  StyledCard, StyledContainer, WineName,
+  MemberPriceContainer,  NonMemberContainer, AddToCartBtn} from './styled'
 
 interface IWine {
   id: number;
@@ -26,25 +27,37 @@ interface IWine {
 
 const WineCard = (props: { wine: IWine }) => {
 
-  const { image, name, price, discount, priceMember, priceNonMember } = props.wine
+  const { id, image, name, price, discount, priceMember, priceNonMember } = props.wine
 
   return (
     <StyledContainer>
-      <a href='#'>
-        <Image src={image} alt={name} width='12rem' height='12rem'/>
-        <h3>{name}</h3>
-        <h5>{price}</h5>
-        <h4>
-          Sócio Wine 
-          <span>R${priceMember}</span>
-          <span>{discount}% OFF</span>
-        </h4>
-        <h4>
-        NÃO SÓCIO 
-          <span>R${priceNonMember}</span>
-        </h4>
-      </a>
-      <button>Adicionar</button>
+      <Link href={`details/${id}`}>
+        <StyledCard>
+          <ImageWrapper>
+            <Image src={image} alt={name} layout='fill' objectFit='contain' />
+          </ImageWrapper>
+
+          <WineName>{name}</WineName>
+
+          <PriceContainer>
+            <Price>
+              {price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+            </Price>
+            <p>{discount}% OFF</p>
+          </PriceContainer>
+
+          <MemberPriceContainer>
+            <h4>Sócio Wine</h4>
+            <p><span>R$</span>{priceMember.toLocaleString('pt-br',{minimumFractionDigits: 2})}</p>
+          </MemberPriceContainer>
+
+          <NonMemberContainer>
+            <h4>NÃO SÓCIO</h4>
+            <p>R${priceNonMember}</p>
+          </NonMemberContainer>
+        </StyledCard>
+      </Link>
+      <AddToCartBtn>Adicionar</AddToCartBtn>
     </StyledContainer>
   )
 }
