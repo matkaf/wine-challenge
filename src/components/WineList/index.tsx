@@ -405,7 +405,7 @@ const WineList = () => {
           </RadioSection>
         </Aside>
         <MainContainer>
-          <h1>123 produtos encontrados</h1>
+          <h1>{wines.length} produtos encontrados</h1>
           <WinesContainer>
             { wines.map((wine) => <WineCard key={wine.id} wine={wine}/>) }
           </WinesContainer>
