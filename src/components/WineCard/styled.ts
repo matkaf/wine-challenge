@@ -9,7 +9,6 @@ export const StyledContainer = styled.div`
 export const StyledCard = styled.a`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   gap: 0.5rem;
   
@@ -34,6 +33,15 @@ export const ImageWrapper = styled.div`
   min-height: 50%;
   position: relative;
   margin-bottom: 0.5rem;
+`
+
+export const FlagWrapper = styled.div`
+  display: flex;
+  width: 90%;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
 `
 
 export const PriceContainer = styled.div`

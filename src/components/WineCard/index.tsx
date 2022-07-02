@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { ImageWrapper, Price, PriceContainer,
   StyledCard, StyledContainer, WineName,
-  MemberPriceContainer,  NonMemberContainer, AddToCartBtn} from './styled'
+  MemberPriceContainer,  NonMemberContainer, AddToCartBtn, FlagWrapper} from './styled'
 
 interface IWine {
   id: number;
@@ -27,7 +27,7 @@ interface IWine {
 
 const WineCard = (props: { wine: IWine }) => {
 
-  const { id, image, name, price, discount, priceMember, priceNonMember } = props.wine
+  const { id, image, name, price, discount, priceMember, priceNonMember, flag } = props.wine
 
   return (
     <StyledContainer>
@@ -35,6 +35,9 @@ const WineCard = (props: { wine: IWine }) => {
         <StyledCard>
           <ImageWrapper>
             <Image src={image} alt={name} layout='fill' objectFit='contain' />
+            <FlagWrapper>
+              <Image src={flag} alt={name} width='30' height='30' />
+            </FlagWrapper>
           </ImageWrapper>
 
           <WineName>{name}</WineName>
