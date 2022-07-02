@@ -2,28 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 
+import { IWine } from '../../interfaces';
+
 import { ImageWrapper, Price, PriceContainer,
   StyledCard, StyledContainer, WineName,
   MemberPriceContainer,  NonMemberContainer, AddToCartBtn, FlagWrapper} from './styled'
-
-interface IWine {
-  id: number;
-  image: string;
-  name: string;
-  price: number;
-  discount: number;
-  priceMember: number;
-  priceNonMember: number;
-  type: string;
-  classification: string;
-  size?: string;
-  rating: number;
-  avaliations?: number;
-  country: string;
-  region: string;
-  flag: string;
-  sommelierComment: string;
-}
 
 const WineCard = (props: { wine: IWine }) => {
 
