@@ -11,8 +11,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const wines: IAPIRes = await res.json()
 
-  console.log(wines);
-
   if (!wines) return { notFound: true }
 
   return {

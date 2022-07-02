@@ -1,5 +1,4 @@
 import React from 'react'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
 import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer } from './styled'
 import WineCard from '../WineCard'
