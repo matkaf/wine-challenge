@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer } from './styled'
+import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer, NavigatorContainer, NavigatorPage } from './styled'
 import WineCard from '../WineCard'
 
 import { IAPIRes, IWine } from '../../interfaces'
+import PageNavigator from './PageNavigator'
 
 const WineList = (props: { wines: IAPIRes }) => {
+  const { items, totalItems, totalPages } = props.wines
 
-  const { items, totalItems } = props.wines
- 
   return (
     <StyledWrapper>
       <StyledContainer>
@@ -43,7 +43,7 @@ const WineList = (props: { wines: IAPIRes }) => {
           <WinesContainer>
             { items.map((wine: IWine) => <WineCard key={wine.id} wine={wine}/>) }
           </WinesContainer>
-            <div> | 1 2 3 4 | </div>
+          <PageNavigator totalPages={totalPages}/>
         </MainContainer>
       </StyledContainer>
     </StyledWrapper>

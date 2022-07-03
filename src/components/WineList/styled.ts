@@ -62,3 +62,27 @@ export const WinesContainer = styled.section`
   gap: 1rem;
   height: 100%;
 `
+
+export const NavigatorContainer = styled.nav`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+
+  gap: 0.5rem;
+  height: 2.5rem;
+`
+
+export const NavigatorPage = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border: 0.1rem solid ${props => props.theme.colors.navHover};
+  border-radius: 0.25rem;
+  color: ${props => props.theme.colors.navHover};
+  cursor: pointer;
+
+  width: 2.5rem;
+  height: 100%;
+`
