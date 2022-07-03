@@ -22,3 +22,15 @@ npm install
 npm build
 npm start
 ```
+
+## ⚙️ Tecnologias utilizadas:
+
+- Typescript
+
+- Next.js
+
+- Context API // Hooks (React)
+
+- HTML e CSS
+
+- Styled Components
