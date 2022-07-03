@@ -5,7 +5,7 @@ import AppContext from '../../context/AppContext'
 import { getWines } from '../../api'
 
 const PageNavigator = (props: { totalPages: number }) => {
-  const { setFilteredWines } = useContext(AppContext)
+  const { setFilteredWines, filter } = useContext(AppContext)
   const [currPage, setCurrPage] = useState(1)
   const { totalPages } = props
 
@@ -22,13 +22,13 @@ const PageNavigator = (props: { totalPages: number }) => {
     console.log('Alterou página', currPage);
 
     const updateWines = async () => {
-      const wines = await getWines(currPage)
+      const wines = await getWines(currPage, filter)
       setFilteredWines(wines)
       console.log(wines);
     }
     updateWines()
     
-  }, [currPage, setFilteredWines])
+  }, [currPage, setFilteredWines, filter])
 
   return (
     <NavigatorContainer>

@@ -1,13 +1,29 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import AppContext from 'context/AppContext'
+
+import { IAPIRes, IWine } from '../../interfaces'
 
 import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer, NavigatorContainer, NavigatorPage } from './styled'
 import WineCard from '../WineCard'
-
-import { IAPIRes, IWine } from '../../interfaces'
 import PageNavigator from './PageNavigator'
+
+import { getWines } from 'api'
 
 const WineList = (props: { filteredWines: IAPIRes }) => {
   const { items, totalItems, totalPages } = props.filteredWines
+  
+  const { filter, setFilter, setFilteredWines } = useContext(AppContext)
+
+  useEffect(() => {
+    const applyFilter = async () => {
+      const wines = await getWines(1, filter)
+
+      return setFilteredWines(wines)
+    }
+
+    applyFilter()
+
+  }, [filter, setFilteredWines])
   
   return (
     <StyledWrapper>
@@ -17,23 +33,48 @@ const WineList = (props: { filteredWines: IAPIRes }) => {
           <h4>Por preço</h4>
           <RadioSection>
             <label>
-              <input name='price' type='radio' value='0-40'/>
+              <input
+                name='price'
+                type='radio'
+                value='0-40'
+                onClick={ (e) => setFilter((e.target as HTMLInputElement).value)}
+              />
               Até R$40
             </label>
             <label>
-              <input name='price' type='radio' value='40-60'/>
+              <input
+                name='price'
+                type='radio'
+                value='40-60'
+                onClick={ (e) => setFilter((e.target as HTMLInputElement).value)}
+              />
               R$40 a R$60
             </label>
             <label>
-              <input name='price' type='radio' value='100-200'/>
+              <input
+                name='price'
+                type='radio'
+                value='100-200'
+                onClick={ (e) => setFilter((e.target as HTMLInputElement).value)}
+              />
               R$100 a R$200
             </label>
             <label>
-              <input name='price' type='radio' value='200-500'/>
+              <input
+                name='price'
+                type='radio'
+                value='200-500'
+                onClick={ (e) => setFilter((e.target as HTMLInputElement).value)}
+              />
               R$200 a R$500
             </label>
             <label>
-            <input name='price' type='radio' value='500'/>
+            <input
+              name='price'
+              type='radio'
+              value='500-'
+              onClick={ (e) => setFilter((e.target as HTMLInputElement).value)}
+            />
               Acima de R$500
             </label>
           </RadioSection>
