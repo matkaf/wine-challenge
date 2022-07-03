@@ -25,7 +25,6 @@ const PageNavigator = (props: { totalPages: number }) => {
       const wines = await getWines(currPage)
       setFilteredWines(wines)
       console.log(wines);
-      window.scrollTo(0, 100)
     }
     updateWines()
     
@@ -35,7 +34,10 @@ const PageNavigator = (props: { totalPages: number }) => {
     <NavigatorContainer>
       { numberOfPages().map((num) => {
         return (
-          <NavigatorPage key={num} onClick={() => setCurrPage(num)}>
+          <NavigatorPage key={num} onClick={() => {
+            setCurrPage(num)
+            window.scrollTo(0, 100)
+            }}>
             {num}
           </NavigatorPage>
         )
