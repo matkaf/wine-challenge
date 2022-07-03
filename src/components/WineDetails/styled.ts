@@ -98,7 +98,7 @@ export const CommentContainer = styled.div`
     color: #111111;
   }
 
-  text {
+  article {
     color: #666666;
     font-size: 0.875rem;
   }

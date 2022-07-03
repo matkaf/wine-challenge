@@ -1,31 +1,29 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import PreviousIcon from '../../assets/previous.svg'
 
 import { AddToCartContainer, CommentContainer, DescriptionContainer, DetailsContainer, FlagWrapper, ImageContainer, PreviousWrapper, PriceContainer, StyledMain, Summary } from './styled'
+import AppContext from 'context/AppContext'
+import { IWine } from 'interfaces'
 
 const WineDetails = () => {
-  const wine = {
-    "id": 0,
-    "image": "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/19694-01.png",
-    "name": "Bacalhôa Quinta da Garrida Colheita Selecionada 2015",
-    "price": 175.9,
-    "discount": 45,
-    "priceMember": 96.9,
-    "priceNonMember": 114,
-    "type": "Tinto",
-    "classification": "Seco",
-    "size": "750 ml",
-    "rating": 4,
-    "avaliations": 292,
-    "country": "Portugal",
-    "region": "Dão",
-    "flag": "https://img.wine.com.br/fenix/image/flags/rounded/portugal.svg",
-    "sommelierComment": "Esse tinto traz em seu assemblage a Touriga Nacional, uma das uvas tintas portuguesas mais conhecidas no mundo do vinho. Nativa do Dão, região produtora desse vinho, essa variedade atinge a sua expressão máxima nesse terroir. O termo Colheita Selecionada estampado no rótulo, é uma referência a qualidade da safra 2015."
-  }
+  const { filteredWines } = useContext(AppContext)
+  const [wine, setWine] = useState({} as IWine)
+  const router = useRouter()
+
+  useEffect(() => {
+    const { items } = filteredWines
+    const { id } = router.query
+
+    const wineFound = items.find((wine: IWine) => wine.id === Number(id))
+    setWine(wineFound)
+  }, [filteredWines, router.query])
+
+  if (!wine.name) return <p> Carregando... </p>
 
   return (
     <StyledMain>
@@ -37,7 +35,6 @@ const WineDetails = () => {
           </a>
         </Link>
       </PreviousWrapper>
-
       <DetailsContainer>
         <ImageContainer>
           <Image src={wine.image} alt={wine.name} layout='fill' objectFit='contain'/>
@@ -77,9 +74,9 @@ const WineDetails = () => {
 
           <CommentContainer>
             <h3>Comentário do Sommelier</h3>
-            <text>
+            <article>
               {wine.sommelierComment}
-            </text>
+            </article>
           </CommentContainer>
           
           <AddToCartContainer>
