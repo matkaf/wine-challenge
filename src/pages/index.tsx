@@ -15,8 +15,6 @@ const Home: NextPage =  () => {
     const fillContext = async () => {
       const wines = await getWines(1)
       setFilteredWines(wines)
-      console.log('Context alimentado!');
-      console.log(wines);
     }
 
     fillContext()
