@@ -6,9 +6,10 @@ import { useRouter } from 'next/router'
 
 import PreviousIcon from '../../assets/previous.svg'
 
-import { AddToCartContainer, CommentContainer, DescriptionContainer, DetailsContainer, FlagWrapper, ImageContainer, PreviousWrapper, PriceContainer, StyledMain, Summary } from './styled'
+import { CommentContainer, DescriptionContainer, DetailsContainer, FlagWrapper, ImageContainer, PreviousWrapper, PriceContainer, StyledMain, Summary } from './styled'
 import AppContext from 'context/AppContext'
 import { IWine } from 'interfaces'
+import AddToCartBtn from './AddToCartBtn'
 
 const WineDetails = () => {
   const { filteredWines } = useContext(AppContext)
@@ -78,15 +79,7 @@ const WineDetails = () => {
               {wine.sommelierComment}
             </article>
           </CommentContainer>
-          
-          <AddToCartContainer>
-            <div>
-              + 0 -
-            </div>
-            <button>
-              Adicionar
-            </button>
-          </AddToCartContainer>
+          <AddToCartBtn wine={wine}/>
         </DescriptionContainer>
       </DetailsContainer>
     </StyledMain>

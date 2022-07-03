@@ -114,18 +114,51 @@ export const AddToCartContainer = styled.div`
   width: 20rem;
   height: 3.5rem;
   background-color: ${props => props.theme.colors.button};
+  box-shadow: rgba(0,0,0,.15) 0 0.25rem 0.5rem 0;
   border-radius: 0.25rem;
   color: white;
 
-  button {
-    width: 8rem;
-    height: 100%;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
+`
+export const QuantityContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  width: 40%;
+  height: 80%;
 
+  h2 {
+    font-weight: 400;
   }
+`
+
+export const SetQuantityBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+  }
+`
+
+export const AddButton = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+
 `
