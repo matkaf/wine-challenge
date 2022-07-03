@@ -1,8 +1,9 @@
-export const getWines = async (page: string, limit: string) => {
-  const BASE_URL = `https://wine-back-test.herokuapp.com/products?page=${page}&limit=${limit}`
+export const getWines = async (page: number) => {
+  const BASE_URL = `https://wine-back-test.herokuapp.com/products?page=${page}&limit=9`
 
   try {
-    const wines = await fetch(BASE_URL)
+    const res = await fetch(BASE_URL)
+    const wines = res.json()
 
     return wines;
   } catch (error) {
