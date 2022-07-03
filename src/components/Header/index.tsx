@@ -4,7 +4,9 @@ import Image from 'next/image'
 import { Nav, StyledHeader, IconsWrapper, NavWrapper } from './styled'
 
 import WineLogo from '../../assets/wine.svg'
-import ProfileIcon from '../../assets/profile.svg'
+import ProfileIcon from '@/images/profile.svg'
+import SearchIcon from '@/images/search.svg'
+import CartIcon from '@/images/winebox.svg'
 
 const Header = () => {
   return (
@@ -28,22 +30,22 @@ const Header = () => {
 
       <IconsWrapper>
         <Image
-          src={ProfileIcon}
+          src={SearchIcon}
           alt='Profile Icon'
-          width={50}
-          height={50}
+          width={45}
+          height={45}
         />
         <Image
           src={ProfileIcon}
           alt='Profile Icon'
-          width={50}
-          height={50}
+          width={45}
+          height={45}
         />
         <Image
-          src={ProfileIcon}
+          src={CartIcon}
           alt='Profile Icon'
-          width={50}
-          height={50}
+          width={45}
+          height={45}
         />
       </IconsWrapper>
     </StyledHeader>

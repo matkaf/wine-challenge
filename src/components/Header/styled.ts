@@ -5,7 +5,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  height: 10%;
+  height: 8vh;
   width: 100%;
   padding: 0.25rem 6rem;
   box-shadow: rgba(0, 0, 0, 0.10) 0 0rem 0.5rem;
@@ -25,6 +25,10 @@ export const Nav = styled.nav`
 
     &:hover {
       color: ${props => props.theme.colors.navHover}
+    }
+
+    &:nth-child(2) {
+      border-bottom: 1px solid ${props => props.theme.colors.navHover};
     }
   }
 
