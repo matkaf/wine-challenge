@@ -8,12 +8,17 @@ const AddToCartBtn = (props: { wine: IWine }) => {
   const sendWineToCart = (wine: IWine, quantity: number) => {
     const prevCart = localStorage.getItem('cart')
 
+    if (!prevCart) {
+      const cart = JSON.stringify([{ wine, quantity }])
+      localStorage.setItem('cart', cart)
+    }
+
     if (prevCart) {
       const parsedCart = JSON.parse(prevCart)
 
       parsedCart.push({ wine, quantity })
    
-     return localStorage.setItem('cart', JSON.stringify(parsedCart))
+      localStorage.setItem('cart', JSON.stringify(parsedCart))
     }
   }
 
