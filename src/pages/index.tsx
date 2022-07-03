@@ -33,7 +33,7 @@ const Home: NextPage =  (/*{ wines }: InferGetStaticPropsType<typeof getStaticPr
     }
 
     fillContext()
-  }, [])
+  }, [setFilteredWines])
 
   // if (!filteredWines) return <h1>Carregando</h1>
 
