@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer, NavigatorContainer, NavigatorPage } from './styled'
 import WineCard from '../WineCard'
@@ -6,9 +6,9 @@ import WineCard from '../WineCard'
 import { IAPIRes, IWine } from '../../interfaces'
 import PageNavigator from './PageNavigator'
 
-const WineList = (props: { wines: IAPIRes }) => {
-  const { items, totalItems, totalPages } = props.wines
-
+const WineList = (props: { filteredWines: IAPIRes }) => {
+  const { items, totalItems, totalPages } = props.filteredWines
+  
   return (
     <StyledWrapper>
       <StyledContainer>
