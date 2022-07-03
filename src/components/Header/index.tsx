@@ -21,7 +21,7 @@ const Header = () => {
         />
         <Nav>
           <a href='#'>Clube</a>
-          <a href=''>Loja</a>
+          <a href='#'>Loja</a>
           <a href='#'>Produtores</a>
           <a href='#'>Ofertas</a>
           <a href='#'>Eventos</a>
