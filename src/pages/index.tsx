@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
-import type { NextPage } from 'next'
 import Head from 'next/head'
+import type { NextPage } from 'next'
 
 import Header from '../components/Header'
 import WineList from '../components/WineList'

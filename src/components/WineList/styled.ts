@@ -44,6 +44,16 @@ export const RadioSection = styled.section`
   }
 `
 
+export const ResetFilter = styled.button`
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: #ff3f47;
+  color: white;
+  width: 30%;
+  height: 2rem;
+`
+
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;

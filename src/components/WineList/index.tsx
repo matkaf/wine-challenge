@@ -3,7 +3,7 @@ import AppContext from 'context/AppContext'
 
 import { IAPIRes, IWine } from '../../interfaces'
 
-import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer, NavigatorContainer, NavigatorPage } from './styled'
+import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer, NavigatorContainer, NavigatorPage, ResetFilter } from './styled'
 import WineCard from '../WineCard'
 import PageNavigator from './PageNavigator'
 
@@ -77,6 +77,13 @@ const WineList = (props: { filteredWines: IAPIRes }) => {
             />
               Acima de R$500
             </label>
+            <ResetFilter
+              onClick={ (e) => {
+                setFilter('0-500')
+              }}
+            >
+              Limpar
+            </ResetFilter>
           </RadioSection>
         </Aside>
         <MainContainer>
