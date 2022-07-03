@@ -1,8 +1,19 @@
+import CartResume from 'components/CartResume'
+import Header from 'components/Header'
+import Head from 'next/head'
 import React from 'react'
 
 const Checkout = () => {
   return (
-    <div>Checkout</div>
+    <>
+    <Head>
+      <title>Wine - Checkout</title>
+    </Head>
+    <Header />
+    <main>
+      <CartResume />
+    </main>
+  </>
   )
 }
 
