@@ -11,6 +11,18 @@ export const StyledHeader = styled.header`
   box-shadow: rgba(0, 0, 0, 0.10) 0 0rem 0.5rem;
 `
 
+export const NavWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+
+  &:nth-child(1) {
+    img {
+      cursor: pointer;
+    }
+  }
+`
+
 export const Nav = styled.nav`
   display: flex;
   flex-direction: row;
@@ -34,15 +46,13 @@ export const Nav = styled.nav`
 
 
 `
-export const NavWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-`
-
 export const IconsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 20%
+  width: 20%;
+
+  span {
+    cursor: pointer;
+  }
 `
