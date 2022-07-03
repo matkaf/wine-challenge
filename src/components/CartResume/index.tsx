@@ -1,11 +1,13 @@
+import AppContext from 'context/AppContext'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BuyButton, DeleteCart, EmptyCart, StyledContainer } from './styled'
 import WinesList from './WinesList'
 
 const CartResume = () => {
   const [cart, setCart] = useState()
+  const { setCartQuantity } = useContext(AppContext)
   const router = useRouter()
 
   useEffect(() => {
@@ -36,6 +38,7 @@ const CartResume = () => {
       <DeleteCart
         onClick={ () => {
           localStorage.removeItem('cart')
+          setCartQuantity(0)
           router.push('/')
         }}
       >

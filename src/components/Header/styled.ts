@@ -56,3 +56,29 @@ export const IconsWrapper = styled.div`
     cursor: pointer;
   }
 `
+
+export const CartQuantity = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 1.9rem;
+  right: 1rem;
+
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 50%;
+
+  width: 1rem;
+  height: 1rem;
+
+  p {
+    color: #4FBFA5;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+`
+export const Span = styled.span`
+  display: flex;
+  justify-content: center;
+`

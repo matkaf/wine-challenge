@@ -1,9 +1,11 @@
+import AppContext from 'context/AppContext'
 import { IWine } from 'interfaces'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AddButton, AddToCartContainer, QuantityContainer, SetQuantityBtn } from './styled'
 
 const AddToCartBtn = (props: { wine: IWine }) => {
   const [quantity, setQuantity] = useState(1)
+  const { setCartQuantity } = useContext(AppContext)
 
   const sendWineToCart = (wine: IWine, quantity: number) => {
     const prevCart = localStorage.getItem('cart')
@@ -11,6 +13,7 @@ const AddToCartBtn = (props: { wine: IWine }) => {
     if (!prevCart) {
       const cart = JSON.stringify([{ wine, quantity }])
       localStorage.setItem('cart', cart)
+      setCartQuantity(1)
     }
 
     if (prevCart) {
@@ -19,6 +22,7 @@ const AddToCartBtn = (props: { wine: IWine }) => {
       parsedCart.push({ wine, quantity })
    
       localStorage.setItem('cart', JSON.stringify(parsedCart))
+      setCartQuantity(parsedCart.length)
     }
   }
 

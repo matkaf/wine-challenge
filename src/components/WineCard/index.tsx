@@ -1,14 +1,35 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 
 import { IWine } from '../../interfaces';
+import AppContext from 'context/AppContext';
 
 import { ImageWrapper, Price, PriceContainer,
   StyledCard, StyledContainer, WineName,
   MemberPriceContainer,  NonMemberContainer, AddToCartBtn, FlagWrapper} from './styled'
 
 const WineCard = (props: { wine: IWine }) => {
+  const { setCartQuantity } = useContext(AppContext)
+
+  const sendWineToCart = (wine: IWine, quantity: number) => {
+    const prevCart = localStorage.getItem('cart')
+
+    if (!prevCart) {
+      const cart = JSON.stringify([{ wine, quantity }])
+      localStorage.setItem('cart', cart)
+      setCartQuantity(1)
+    }
+
+    if (prevCart) {
+      const parsedCart = JSON.parse(prevCart)
+
+      parsedCart.push({ wine, quantity })
+   
+      localStorage.setItem('cart', JSON.stringify(parsedCart))
+      setCartQuantity(parsedCart.length)
+    }
+  }
 
   const { id, image, name, price, discount, priceMember, priceNonMember, flag } = props.wine
 
@@ -43,7 +64,11 @@ const WineCard = (props: { wine: IWine }) => {
           </NonMemberContainer>
         </StyledCard>
       </Link>
-      <AddToCartBtn>Adicionar</AddToCartBtn>
+      <AddToCartBtn
+        onClick={ () => sendWineToCart(props.wine, 1) }
+      >
+        Adicionar
+      </AddToCartBtn>
     </StyledContainer>
   )
 }

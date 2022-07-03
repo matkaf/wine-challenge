@@ -6,12 +6,15 @@ import AppContext from "./AppContext";
 const Provider = ({ children }: PropsWithChildren) => {
   const [filteredWines, setFilteredWines] = useState()
   const [filter, setFilter] = useState('0-500')
+  const [cartQuantity, setCartQuantity] = useState(0)
 
   const value = {
     filteredWines,
     setFilteredWines,
     filter,
-    setFilter
+    setFilter,
+    cartQuantity,
+    setCartQuantity,
   }
 
   return (
