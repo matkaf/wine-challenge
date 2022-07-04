@@ -4,7 +4,7 @@ https://user-images.githubusercontent.com/85763152/177069141-afc349cc-0bdb-4917-
 
 ## :rocket: Como rodar o projeto?
 
-Você pode acessar o site por esse link: http://wine-challenge-one.vercel.app/
+Você pode acessar o site por esse link: https://wine.matkaf.vercel.app/
 
 Ou clonar o repositório para rodar localmente:
 
