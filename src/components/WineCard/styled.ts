@@ -67,6 +67,7 @@ export const Price = styled.h5`
   font-size: 0.688rem;
   text-decoration: line-through;
 `
+
 export const MemberPriceContainer = styled(PriceContainer)`
   align-items: baseline;
 

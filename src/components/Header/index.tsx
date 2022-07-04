@@ -1,14 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Image from 'next/image'
+import React, { useContext, useEffect } from 'react'
+import AppContext from 'context/AppContext'
 
-import { Nav, StyledHeader, IconsWrapper, NavWrapper, CartQuantity, Span } from './styled'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { StyledHeader, IconsWrapper, NavWrapper, CartQuantity, Span } from './styled'
 
 import WineLogo from '../../assets/wine.svg'
 import ProfileIcon from '@/images/profile.svg'
 import SearchIcon from '@/images/search.svg'
 import CartIcon from '@/images/winebox.svg'
-import Link from 'next/link'
-import AppContext from 'context/AppContext'
 
 const Header = () => {
   const { cartQuantity, setCartQuantity } = useContext(AppContext)
@@ -29,20 +30,17 @@ const Header = () => {
           <Image
             src={WineLogo}
             alt="Wine"
-            width={103}
-            height={30}
-            layout='fixed'
+            width={150}
+            height={40}
           />
         </Link>
-        <Nav>
-          <a href='#'>Clube</a>
-          <Link href='/'>
-            <a href='#'>Loja</a>
-          </Link>
-          <a href='#'>Produtores</a>
-          <a href='#'>Ofertas</a>
-          <a href='#'>Eventos</a>
-        </Nav>
+        <a href='#'>Clube</a>
+        <Link href='/'>
+          <a href='#'>Loja</a>
+        </Link>
+        <a href='#'>Produtores</a>
+        <a href='#'>Ofertas</a>
+        <a href='#'>Eventos</a>
       </NavWrapper>
 
       <IconsWrapper>

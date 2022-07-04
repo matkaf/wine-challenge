@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+
 import { ThemeProvider } from 'styled-components'
 import Provider from '../context/Provider'
 

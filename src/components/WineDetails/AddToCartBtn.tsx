@@ -1,6 +1,8 @@
-import AppContext from 'context/AppContext'
-import { IWine } from 'interfaces'
 import React, { useContext, useState } from 'react'
+import AppContext from 'context/AppContext'
+
+import { IWine } from 'interfaces'
+
 import { AddButton, AddToCartContainer, QuantityContainer, SetQuantityBtn } from './styled'
 
 const AddToCartBtn = (props: { wine: IWine }) => {

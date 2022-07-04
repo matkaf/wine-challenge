@@ -26,6 +26,7 @@ export const StyledContainer = styled.section`
   align-items: center;
   gap: 1rem;
 `
+
 export const WinesContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,6 +78,7 @@ export const BuyButton = styled.button`
   font-size: 1.125rem;
   cursor: pointer;
 `
+
 export const DeleteCart = styled(BuyButton)`
   background-color: #ff3f47;
 `

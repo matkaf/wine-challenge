@@ -1,7 +1,8 @@
-import CartResume from 'components/CartResume'
-import Header from 'components/Header'
 import Head from 'next/head'
 import React from 'react'
+
+import CartResume from 'components/CartResume'
+import Header from 'components/Header'
 
 const Checkout = () => {
   return (

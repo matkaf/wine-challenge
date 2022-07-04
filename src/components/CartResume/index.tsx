@@ -1,9 +1,12 @@
-import AppContext from 'context/AppContext'
+import React, { useContext, useEffect, useState } from 'react'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useContext, useEffect, useState } from 'react'
-import { BuyButton, DeleteCart, EmptyCart, StyledContainer } from './styled'
+
+import AppContext from 'context/AppContext'
+
 import WinesList from './WinesList'
+import { BuyButton, DeleteCart, EmptyCart, StyledContainer } from './styled'
 
 const CartResume = () => {
   const [cart, setCart] = useState()

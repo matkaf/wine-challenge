@@ -4,9 +4,9 @@ export const StyledWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 90%; */ // não especificar tamanho porque varia conforme resposta da API
   padding: 4rem 8rem;
 `
+
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -65,12 +65,11 @@ export const MainContainer = styled.div`
     color: #262626;
   }
 `
+
 export const WinesContainer = styled.section`
   display: flex;
-  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 1rem;
-  height: 100%;
 `
 
 export const NavigatorContainer = styled.nav`
@@ -83,14 +82,15 @@ export const NavigatorContainer = styled.nav`
   height: 2.5rem;
 `
 
-export const NavigatorPage = styled.a`
+export const NavigatorPage = styled.a<{background: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
   
   border: 0.1rem solid ${props => props.theme.colors.navHover};
   border-radius: 0.25rem;
-  color: ${props => props.theme.colors.navHover};
+  color: ${props => props.background ? 'white' : props.theme.colors.navHover};
+  background-color: ${props => props.background ? props.theme.colors.navHover : 'transparent' };
   cursor: pointer;
 
   width: 2.5rem;

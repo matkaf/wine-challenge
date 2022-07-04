@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 
+import AppContext from 'context/AppContext'
+import { IWine } from 'interfaces'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-import PreviousIcon from '../../assets/previous.svg'
-
 import { CommentContainer, DescriptionContainer, DetailsContainer, FlagWrapper, ImageContainer, PreviousWrapper, PriceContainer, StyledMain, Summary } from './styled'
-import AppContext from 'context/AppContext'
-import { IWine } from 'interfaces'
 import AddToCartBtn from './AddToCartBtn'
+import PreviousIcon from '../../assets/previous.svg'
 
 const WineDetails = () => {
   const { filteredWines } = useContext(AppContext)
@@ -24,7 +24,7 @@ const WineDetails = () => {
     setWine(wineFound)
   }, [filteredWines, router.query])
 
-  if (!wine.name) return <p> Carregando... </p>
+  if (!wine.name) return <p>Carregando...</p>
 
   return (
     <StyledMain>
@@ -59,12 +59,12 @@ const WineDetails = () => {
             <p>{wine.type}</p>
             <p>{wine.classification}</p>
             <p>{wine.size}</p>
-            <div>XXXXX</div>
+            <div>X X X X X</div>
             <p>{`(${wine.avaliations})`}</p>
           </Summary>
 
           <PriceContainer>
-            <h1><span>R$</span>{(wine.price).toLocaleString('pt-br', {minimumFractionDigits: 2})}</h1>
+            <h1><span>R$</span>{(wine.priceMember).toLocaleString('pt-br', {minimumFractionDigits: 2})}</h1>
             <h3>
               {
                 `NÃO-SÓCIO

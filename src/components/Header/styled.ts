@@ -5,6 +5,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  gap: 0.5rem 1rem;
   height: 8vh;
   width: 100%;
   padding: 0.25rem 6rem;
@@ -14,21 +15,17 @@ export const StyledHeader = styled.header`
 export const NavWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 80%;
+  height: 45px;
+  gap: 2rem;
+  padding-left: 2rem;
 
   &:nth-child(1) {
     img {
       cursor: pointer;
     }
   }
-`
-
-export const Nav = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 4rem;
-  margin-left: 5rem;
 
   a {
     text-decoration: none;
@@ -39,13 +36,12 @@ export const Nav = styled.nav`
       color: ${props => props.theme.colors.navHover}
     }
 
-    &:nth-child(2) {
+    &:nth-child(3) {
       border-bottom: 1px solid ${props => props.theme.colors.navHover};
     }
   }
-
-
 `
+
 export const IconsWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -78,6 +74,7 @@ export const CartQuantity = styled.div`
     font-weight: 700;
   }
 `
+
 export const Span = styled.span`
   display: flex;
   justify-content: center;

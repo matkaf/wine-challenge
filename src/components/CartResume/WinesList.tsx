@@ -1,7 +1,7 @@
-import { IWine } from 'interfaces'
-import Image from 'next/image'
 import React from 'react'
-import { BuyButton, ImageContainer, NameContainer, WineInfo, WinesContainer } from './styled'
+import Image from 'next/image'
+
+import { ImageContainer, NameContainer, WineInfo, WinesContainer } from './styled'
 
 const WinesList = (props: { cart: any }) => {
   const { cart } = props

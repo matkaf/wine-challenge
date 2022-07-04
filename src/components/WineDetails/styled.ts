@@ -1,10 +1,19 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+`
 
 export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   padding: 4rem 6rem;
   justify-content: flex-start;
+  animation: ${fadeIn} 1s ease;
 `
 
 export const PreviousWrapper = styled.div`
@@ -117,8 +126,8 @@ export const AddToCartContainer = styled.div`
   box-shadow: rgba(0,0,0,.15) 0 0.25rem 0.5rem 0;
   border-radius: 0.25rem;
   color: white;
-
 `
+
 export const QuantityContainer = styled.div`
   display: flex;
   flex-direction: row;

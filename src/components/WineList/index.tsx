@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import AppContext from 'context/AppContext'
 
 import { IAPIRes, IWine } from '../../interfaces'
+import { getWines } from 'api'
 
 import { Aside, RadioSection, StyledContainer, StyledWrapper, MainContainer, WinesContainer, NavigatorContainer, NavigatorPage, ResetFilter } from './styled'
 import WineCard from '../WineCard'
 import PageNavigator from './PageNavigator'
 
-import { getWines } from 'api'
 
 const WineList = (props: { filteredWines: IAPIRes }) => {
   const { items, totalItems, totalPages } = props.filteredWines
@@ -86,6 +86,7 @@ const WineList = (props: { filteredWines: IAPIRes }) => {
             </ResetFilter>
           </RadioSection>
         </Aside>
+
         <MainContainer>
           <h1>{totalItems} produtos encontrados</h1>
           <WinesContainer>
