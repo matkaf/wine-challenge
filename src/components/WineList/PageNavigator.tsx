@@ -34,10 +34,14 @@ const PageNavigator = (props: { totalPages: number }) => {
     <NavigatorContainer>
       { numberOfPages().map((num) => {
         return (
-          <NavigatorPage key={num} onClick={() => {
-            setCurrPage(num)
-            window.scrollTo(0, 100)
-            }}>
+          <NavigatorPage
+            key={num}
+            onClick={() => {
+              setCurrPage(num)
+              window.scrollTo(0, 100)
+            }}
+            background={ num === currPage }
+          >
             {num}
           </NavigatorPage>
         )
