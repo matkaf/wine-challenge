@@ -6,9 +6,9 @@ export const StyledHeader = styled.header`
   align-items: center;
   background-color: white;
   gap: 0.5rem 1rem;
-  height: 8vh;
+  height: 10%;
   width: 100%;
-  padding: 0.25rem 6rem;
+  padding: 0.5rem 6rem;
   box-shadow: rgba(0, 0, 0, 0.10) 0 0rem 0.5rem;
 `
 
