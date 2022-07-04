@@ -1,5 +1,7 @@
 # Wine Front-end Challenge
 
+https://user-images.githubusercontent.com/85763152/177069141-afc349cc-0bdb-4917-9d97-294e1d22c721.mp4
+
 ## :rocket: Como rodar o projeto?
 
 Você pode acessar o site por esse link: http://wine-challenge-one.vercel.app/
